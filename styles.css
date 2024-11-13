@@ -23,6 +23,7 @@ html, body {
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: center;
+    min-height: 100vh;
 }
 
 main {
@@ -181,10 +182,10 @@ footer {
     background-color: #333;
     color: #f5f5f5;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 0;  
     margin-top: auto;
 }
-
+ 
 footer ul {
     list-style: none;
     padding: 0;
@@ -193,7 +194,7 @@ footer ul {
     justify-content: center;
     gap: 15px;
 }
-
+ 
 footer ul li a {
     text-decoration: none;
     color: #f5f5f5;
@@ -202,9 +203,27 @@ footer ul li a {
 footer ul li a:hover {
     color: #ffcc00;
 }
-
+ 
 footer p {
     margin-top: 10px;
     font-size: 0.9em;
 }
 
+/* Estilo da seção de redes sociais */
+.social-media h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #f5f5f5;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #f5f5f5;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00; /* Cor de destaque ao passar o mouse */
+}
