@@ -1,3 +1,15 @@
+@media (max-width: 768px) {
+    /* Ajustes para telas menores */
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu, .site-title, .login-link {
+        font-size: 1.2em;
+    }
+}
+
 /* Configurar o layout principal para que o footer fique na parte inferior */
 html, body {
     height: 100%;
