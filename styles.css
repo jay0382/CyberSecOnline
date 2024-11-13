@@ -1,0 +1,198 @@
+/* Configurar o layout principal para que o footer fique na parte inferior */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    background-image: url(images/fundo.webp);
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+    flex: 1;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: rgba(244, 244, 244, 0.8);
+    border-bottom: 2px solid #ffcc00;
+    position: relative;
+}
+
+/* Título do site com sombra */
+.site-title h1 {
+    font-size: 3em;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+/* Container para o botão "Entrar" */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Espaçamento ao redor do botão */
+    background-color: #ffffff; /* Cor de fundo da caixinha */
+    border: 2px solid #007BFF; /* Borda ao redor da caixa */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+/* Botão de login mais robusto */
+.login-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: auto;
+}
+
+.login-link:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do botão de hambúrguer */
+.menu-toggle {
+    cursor: pointer;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.menu-icon {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+/* Estilo do menu de opções */
+.menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu ul li a:hover {
+    color: #007BFF;
+}
+
+/* Estilo para o container de tópicos */
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Estilo para os cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Imagem dentro do card */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Título do card */
+.card h2 {
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Descrição do card */
+.card p {
+    font-size: 0.9em;
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+/* Footer fixado na parte inferior */
+footer {
+    background-color: #333;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+footer ul li a:hover {
+    color: #ffcc00;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
