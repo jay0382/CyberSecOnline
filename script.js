@@ -52,7 +52,7 @@ function closeRegisterModal() {
       if (username && password) {
 
           // Redireciona para a página desejada
-          window.location.href = "/pagina-principal/pagina-principal.html"; //Substitua pelo link da página principal ou desejada
+          window.location.href = "pagina-principal/pagina-principal.html"; //Substitua pelo link da página principal ou desejada
       } else {
           alert("Por favor, preencha o usuário e a senha.");
       }
