@@ -31,18 +31,21 @@
         <div class="site-title">
             <h1>CiberSecOnline</h1> 
         </div>
+        <!-- Container para os botões "Entrar" e "Criar Conta" -->
         <!-- Botão "Entrar" para abrir o modal --> 
         <div class="login-container">
-            <div class="login-link" onclick="openModal()">
-            Entrar
-            </div>
-        </div>
+            <a href="#" class="login-link" onclick="openLoginModal()">Entrar</a> 
+           
+            <!-- Botão "Criar Conta" para abrir o modal -->
+            <a href="#" class="register-link" onclick="openRegisterModal()">Criar Conta</a>   
+        </div> 
+
         <!-- Modal de Login -->
         <div id="loginModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
+                <span class="close" onclick="closeLoginModal()">&times;</span>
                 <h2>Login</h2>
-                <form id="loginForm" onsubmit="redirectToHome(event)">
+                <form id="loginForm">
                     <label for="username">Usuário ou Email:</label>
                     <input type="text" id="username" name="username" required>
              
@@ -52,6 +55,29 @@
                     <button type="submit">Entrar</button>
                 </form>
             </div>
+        </div>
+
+        <!-- Modal de Criação de Conta -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeRegisterModal()">&times;</span>
+                <h2>Criar Conta</h2>
+                <form id="registerForm">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="newUsername">Nome de Usuário:</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+
+                    <label for="newPassword">Senha:</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+
+                    <label for="confirmPassword">Confirmar Senha:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                    <button type="submit">Criar Conta</button>
+                </form>
+            </div> 
         </div>
 </header>
 <main>
