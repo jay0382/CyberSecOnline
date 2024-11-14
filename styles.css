@@ -59,16 +59,45 @@ main {
     margin: 0;
 }
 
-/* Container para o botão "Entrar" */
+/* Container para os botões "Entrar" e "Criar Conta" */
 .login-container {
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: #ffffff;
-    border: 2px solid #007BFF;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do botão "Entrar" */
+.login-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+/* Estilo do botão "Criar Conta" */
+.register-link {
+    display: inline-block;
+    padding: 8px 18px; /* Um pouco menor que o "Entrar" */
+    color: #ffffff;
+    background-color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.register-link:hover {
+    background-color: #218838; /* Cor ao passar o mouse */
 }
 
 /* Botão de login mais robusto */
