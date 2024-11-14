@@ -18,11 +18,11 @@
 
         <div class="menu" id="menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#">Quem Somo?</a></li>
                 <li><a href="#">Serviços</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Contato</a></li>
-                <li><a href="#">Comunidade</a></li>
+                <li><a href="#">Fórum</a></li>
                 <li><a href="#">Sugestões</a></li>
                 <li><a href="#"></a></li>
             </ul>
@@ -31,14 +31,28 @@
         <div class="site-title">
             <h1>CiberSecOnline</h1> 
         </div>
-
+        <!-- Botão "Entrar" para abrir o modal --> 
         <div class="login-container">
-            <a href="#" class="login-link>
-                <img src="images/Seta.png" alt="Seta Azul">
-             Entrar
-            </a>
+            <div class="login-link" onclick="openModal()">
+            Entrar
+            </div>
         </div>
-    </div>
+        <!-- Modal de Login -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm" onsubmit="redirectToHome(event)">
+                    <label for="username">Usuário ou Email:</label>
+                    <input type="text" id="username" name="username" required>
+             
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
 </header>
 <main>
     <section class="topics">
