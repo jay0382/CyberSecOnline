@@ -4,23 +4,40 @@ function toggleMenu() {
     menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "block" : "none";
 }
 
-// Função para abrir o modal
-  function openModal() {
+// Função para abrir o modal de login
+  function openLoginModal() {
     document.getElementById("loginModal").style.display = "block";
     document.querySelector(".login-container").style.display = "none"; // Esconde o botão "Entrar"
   }
 
-  // Função para fechar o modal
-  function closeModal() {
+  // Função para fechar o modal de login
+  function closeLoginModal() {
     document.getElementById("loginModal").style.display = "none";
     document.querySelector(".login-container").style.display = "flex"; // Mostra o botão "Entrar" novamente
   }
 
+// Função para abrir o modal de criação de conta
+function openRegisterModal() {
+    document.getElementById("registerModal").style.display = "block";
+    document.querySelector(".login-container").style.display = "none";
+  }
+
+// Função para fechar o modal de criação de conta
+function closeRegisterModal() {
+    document.getElementById("registerModal").style.display = "none";
+    document.querySelector(".login-container").style.display = "flex";
+  }
+
   // Fechar o modal ao clicar fora dele
   window.onclick = function(event) {
-    const modal = document.getElementById("loginModal");
-    if (event.target === modal) {
-      modal.style.display = "none";
+    const loginModal = document.getElementById("loginModal");
+    const registerModal = document.getElementById("registerModal");
+
+    if (event.target === loginModal) {
+        closeLoginModal();
+
+    } else if (event.target === registerModal) {
+        closeRegisterModal();
     }
   };
 
