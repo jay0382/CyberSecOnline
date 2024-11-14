@@ -40,6 +40,15 @@ main {
     position: relative;
 }
 
+.site-title {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
 /* Título do site com sombra */
 .site-title h1 {
     font-size: 3em;
