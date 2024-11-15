@@ -57,3 +57,23 @@ function closeRegisterModal() {
           alert("Por favor, preencha o usuário e a senha.");
       }
   }
+
+// Função para abrir o modal de Política de Privacidade
+function openPrivacyModal() {
+    document.getElementById("privacyModal").style.display = "block";
+}
+
+// Função para fechar o modal de Política de Privacidade
+function closePrivacyModal() {
+     document.getElementById("privacyModal").style.display = "none";
+}
+
+// Fechar o modal ao clicar fora dele
+window.onclick = function(event) {
+    const privacyModal = document.getElementById("privacyModal");
+    if (event.target === privacyModal) {
+        privacyModal.style.display = "none";
+    }
+};
+
+
