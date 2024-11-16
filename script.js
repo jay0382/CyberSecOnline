@@ -76,4 +76,20 @@ window.onclick = function(event) {
     }
 };
 
+// Função para abrir o modal de Termos de Serviço
+function openTermsModal() {
+    document.getElementById("termsModal").style.display = "block";
+}
 
+// Função para fechar o modal de Termos de Serviço
+function closeTermsModal() {
+    document.getElementById("termsModal").style.display = "none";
+}
+
+// Fechar o modal ao clicar fora dele
+window.onclick = function(event) {
+    const termsModal = document.getElementById("termsModal");
+    if (event.target === termsModal) {
+        termsModal.style.dispaly = "none";
+    }
+}; 
