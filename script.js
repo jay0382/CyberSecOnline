@@ -38,27 +38,81 @@ function closeRegisterModal() {
 
     } else if (event.target === registerModal) {
         closeRegisterModal();
-    }
   };
 
-  function redirectToHome(event) {
-      event.preventDefault(); // Evita o envio padrão do formulário
+// Validação do formulário de registro
+document.getElementById("registerForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      // Aqui você pode adicionar uma validação dos campos, se necessário
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("newUsername").value;
+    const password = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-      // Verificação de exemplo (opcional)
-      if (username && password) {
+    // Verificar se as senhas coincidem
+    if (password !== confirmPassword) {
+        alert("As senhas não coincidem");
+        return;
+    }
+    // Validação do padrão de senha (opcional, pois o HTML já faz isso)
 
-          // Redireciona para a página desejada
-          window.location.href = "pagina-principal/index.html"; //Substitua pelo link da página principal ou desejada
-      } else {
-          alert("Por favor, preencha o usuário e a senha.");
-      }
-  }
+    const passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}/;
+    if (!passwordPattern.test(password)) {
+        alert("A senha não atende aos requisitos de segurança.");
+        return;
+    }
 
-// Função para abrir o modal de Política de Privacidade
+    // Enviar os dados ao backend
+    const data = { email, username, password };
+
+    fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    })
+        .then((response) => {
+            if (response.ok) {
+                alert("Conta criada com sucesso!");
+                closeRegisterModal();
+            } else {
+                alert("Erro ao criar conta. Tente novamente.");
+            }
+        })
+        .catch((error) => {
+            console.error("Erro", error);
+            alert("Ocorreu um erro. Tente novamente mais tarde.");
+        });
+});
+
+// Validação do formulário de login
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Enviar os dados ao backend
+    const data = { email, password };
+
+    fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    })
+        .then((response) => {
+            if (response.ok) {
+                alert("Login realizado com sucesso!");
+            } else {
+                alert("Credenciais inválidas. Tente novamente.");
+            }
+        })
+        .catch((error) => {
+            console.error("Erro:", error);
+            alert("Ocorreu um erro. Tente novamente mais tarde.");
+        });
+}); 
+
+// Função para  abrir o modal de Política de Privacidade
 function openPrivacyModal() {
     document.getElementById("privacyModal").style.display = "block";
 }
