@@ -4,41 +4,45 @@ function toggleMenu() {
     menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "block" : "none";
 }
 
-// Função para abrir o modal de login
-  function openLoginModal() {
+// Função para abrir e fechar modais de login
+function openLoginModal() {
     document.getElementById("loginModal").style.display = "block";
     document.querySelector(".login-container").style.display = "none"; // Esconde o botão "Entrar"
-  }
+}
 
-  // Função para fechar o modal de login
-  function closeLoginModal() {
+function closeLoginModal() {
     document.getElementById("loginModal").style.display = "none";
     document.querySelector(".login-container").style.display = "flex"; // Mostra o botão "Entrar" novamente
-  }
+}
 
-// Função para abrir o modal de criação de conta
+// Função para abrir e fechar modais de criação de conta
 function openRegisterModal() {
     document.getElementById("registerModal").style.display = "block";
     document.querySelector(".login-container").style.display = "none";
-  }
+}
 
-// Função para fechar o modal de criação de conta
 function closeRegisterModal() {
     document.getElementById("registerModal").style.display = "none";
     document.querySelector(".login-container").style.display = "flex";
-  }
+}
 
-  // Fechar o modal ao clicar fora dele
-  window.onclick = function(event) {
-    const loginModal = document.getElementById("loginModal");
-    const registerModal = document.getElementById("registerModal");
+// Funções para abrir e fechar Política de Privacidade
+function openPrivacyModal() {
+    document.getElementById("privacyModal").style.display = "block";
+}
 
-    if (event.target === loginModal) {
-        closeLoginModal();
+function closePrivacyModal() {
+    document.getElementById("privacyModal").style.display = "none";
+}
 
-    } else if (event.target === registerModal) {
-        closeRegisterModal();
-  };
+// Funções para abrir e fechar Termos de Serviço
+function openTermsModal() {
+    document.getElementById("termsModal").style.display = "block";
+}
+
+function closeTermsModal() {
+    document.getElementById("termsModal").style.display = "none";
+}
 
 // Validação do formulário de registro
 document.getElementById("registerForm").addEventListener("submit", function (event) {
@@ -49,12 +53,10 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
     const password = document.getElementById("newPassword").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
-    // Verificar se as senhas coincidem
     if (password !== confirmPassword) {
         alert("As senhas não coincidem");
         return;
     }
-    // Validação do padrão de senha (opcional, pois o HTML já faz isso)
 
     const passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}/;
     if (!passwordPattern.test(password)) {
@@ -62,7 +64,6 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         return;
     }
 
-    // Enviar os dados ao backend
     const data = { email, username, password };
 
     fetch("/api/register", {
@@ -84,14 +85,13 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         });
 });
 
-// Validação do formulário de login
+// Validação do formulário de login com redirecionamento
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const email = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Enviar os dados ao backend
     const data = { email, password };
 
     fetch("/api/login", {
@@ -102,6 +102,8 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         .then((response) => {
             if (response.ok) {
                 alert("Login realizado com sucesso!");
+                //Redirecionar para a página principal
+                window.location.href = "pagina-principal/index.html"; 
             } else {
                 alert("Credenciais inválidas. Tente novamente.");
             }
@@ -110,40 +112,17 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             console.error("Erro:", error);
             alert("Ocorreu um erro. Tente novamente mais tarde.");
         });
-}); 
+});
 
-// Função para  abrir o modal de Política de Privacidade
-function openPrivacyModal() {
-    document.getElementById("privacyModal").style.display = "block";
-}
-
-// Função para fechar o modal de Política de Privacidade
-function closePrivacyModal() {
-     document.getElementById("privacyModal").style.display = "none";
-}
-
-// Fechar o modal ao clicar fora dele
+// Fechar qualquer modal ao clicar fora dele
 window.onclick = function(event) {
+    const loginModal = document.getElementById("loginModal");
+    const registerModal = document.getElementById("registerModal");
     const privacyModal = document.getElementById("privacyModal");
-    if (event.target === privacyModal) {
-        privacyModal.style.display = "none";
-    }
-};
-
-// Função para abrir o modal de Termos de Serviço
-function openTermsModal() {
-    document.getElementById("termsModal").style.display = "block";
-}
-
-// Função para fechar o modal de Termos de Serviço
-function closeTermsModal() {
-    document.getElementById("termsModal").style.display = "none";
-}
-
-// Fechar o modal ao clicar fora dele
-window.onclick = function(event) {
     const termsModal = document.getElementById("termsModal");
-    if (event.target === termsModal) {
-        termsModal.style.dispaly = "none";
-    }
-}; 
+
+    if (event.target === loginModal) closeLoginModal();
+    if (event.target === registerModal) closeRegisterModal();
+    if (event.target === privacyModal) closePrivacyModal();
+    if (event.target === termsModal) closeTermsModal();
+};
