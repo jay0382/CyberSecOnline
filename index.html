@@ -70,7 +70,10 @@
                     <input type="text" id="newUsername" name="newUsername" required>
 
                     <label for="newPassword">Senha:</label>
-                    <input type="password" id="newPassword" name="newPassword" required>
+                    <input type="password" id="newPassword" name="newPassword"
+                           required
+                           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}"
+                           title="A senha deve conter pelo menos 6 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial."/>  
 
                     <label for="confirmPassword">Confirmar Senha:</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" required>
