@@ -138,3 +138,30 @@ window.onclick = function(event) {
     if (event.target === privacyModal) closePrivacyModal();
     if (event.target === termsModal) closeTermsModal();
 };
+
+//Exibir janela de cookies após 5 segundos
+setTimeout(() => {
+  const cookieConsent = document.getElementById('cookieConcent');
+  const hasConsent = localStorage.getItem('cookieConsent');
+
+  if (!hasConsent) {
+    cookieConcent.classList.remove('hidden');
+  }
+}, 5000);
+
+//Gerenciar ações dos botões
+document.getElementById('acceptCookies').addEventListener('click', () => {
+  localStorage.setItem('cookieConcent', 'accepted');
+  hideCookieConsent();
+});
+
+document.getElementById('rejectCookies').addEventListener('click', () => {
+  localStorage.setItem('cookieConcent', 'rejected');
+  hideCookieConcent();
+});
+
+//Função para ocultar a janela
+function hideCookieConsent() {
+  const cookieConsent = document.getElementById('cookieConsent');
+  cookieConsent.classList.add('hidden');
+}
