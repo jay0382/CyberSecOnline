@@ -409,3 +409,54 @@ footer p {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Estilo para a janela de cookies */
+.cookie-consent {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  font-size: 14px;
+  color: #333;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cookie-consent p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.cookie-consent .cookie-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-consent .cookie-btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.cookie-consent .cookie-btn:first-child {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+.cookie-consent .cookie-btn:last-child {
+  background-color: #d9534f;
+  color: #ffffff;
+}
+
+/* Ocultar a janela até ser ativada */
+.hidden {
+  display: none;
+}
