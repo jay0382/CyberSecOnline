@@ -256,8 +256,37 @@
             <button id="acceptCookies" class="cookie-btn">Aceitar todos os cookies</button>
             <button id="rejectCookies" class="cookie-btn">Rejeitar Todos</button>
           </div>
-        </div> 
-                  
+        </div>
+
+        <!-- Modal de Definições de Cookies -->
+        <div id="cookieSettingsModal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close" onclick="closeCookieSettingsModal()">&times;</span>
+            <h2>Definições de Cookies</h2>
+            <form id="cookieSettingsForm">
+              <label>
+                <input type="checkbox" id="necessaryCookies" disabled checked>
+                Cookies Necessários (sempre ativos)
+              </label>
+              <label>
+                <input type="checkbox" id="preferenceCookies">
+                Cookies de Preferências
+              </label>
+              <label>
+                <input type="checkbox" id="statisticsCookies">
+                Cookies de Estatísticas
+              </label>
+              <label>
+                <input type="checkbox" id="marketingCookies">
+                Cookies de Marketing
+              </label>
+              <div class="cookie-buttons">
+                <button type="button" class="cookie-btn" onclick="saveCookieSettings()">Salvar Preferências</button>
+              </div>
+            </form>
+          </div>
+        </div>
+                   
      <script src="script.js"></script>
 </body>
 </html>
