@@ -511,3 +511,9 @@ footer p {
   background-color: #0056b3;
   color: #ffffff;
 }
+
+/* Ocultar modal inicialmente */
+.hidden {
+  display: none;
+}
+
