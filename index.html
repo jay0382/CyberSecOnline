@@ -70,13 +70,13 @@
                     <input type="text" id="newUsername" name="newUsername" required>
 
                     <label for="newPassword">Senha:</label>
-                    <input type="password" id="newPassword" name="newPassword"
-                           required
+                    <input type="password" id="newPassword" name="newPassword" required
                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}"
-                           title="A senha deve conter pelo menos 6 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial."/>  
+                           title="A senha deve conter pelo menos 6 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.">  
 
                     <label for="confirmPassword">Confirmar Senha:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required
+                           title="Por favor, insira a mesma senha digitada acima">
 
                     <button type="submit">Criar Conta</button>
                 </form>
@@ -243,7 +243,20 @@
                    Se você não concorda com qualquer parte destes Termos, por favor, não use este site.
                 </p>
             </div> 
-        </div>    
+        </div>
+
+        <!-- Janela de Cookies -->
+        <div id="cookieConcent" class="cookie-concent hidden">
+          <p> 
+            Usamos cookies para garantir que oferecemos a melhor experiência em nosso site. Isso inclui cookies de sites de redes sociais de terceiros e cookies de publicidade que podem analisar seu uso deste site. Clique em "Aceitar todos os cookies" para concordar ou em "Configurações de cookies" para cancelar. 
+            <a href="/politica-de-cookies.html">Política de cookies</a>
+            <a href="/politica-de-cookies.html">Política de cookies</a>
+          </p>
+          <div class="cookies-buttons">
+            <button id="acceptCookies" class="cookie-btn">Aceitar todos os cookies</button>
+            <button id="rejectCookies" class="cookie-btn">Rejeitar Todos</button>
+          </div>
+        </div>   
      <script src="script.js"></script>
 </body>
 </html>
