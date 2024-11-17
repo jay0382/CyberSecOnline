@@ -139,28 +139,28 @@ window.onclick = function(event) {
     if (event.target === termsModal) closeTermsModal();
 };
 
-//Exibir janela de cookies após 5 segundos
+// Exibir janela de cookies após 5 segundos
 setTimeout(() => {
-  const cookieConsent = document.getElementById('cookieConcent');
+  const cookieConsent = document.getElementById('cookieConsent');
   const hasConsent = localStorage.getItem('cookieConsent');
 
   if (!hasConsent) {
-    cookieConcent.classList.remove('hidden');
+    cookieConsent.classList.remove('hidden');
   }
 }, 5000);
 
-//Gerenciar ações dos botões
+// Gerenciar ações dos botões
 document.getElementById('acceptCookies').addEventListener('click', () => {
-  localStorage.setItem('cookieConcent', 'accepted');
+  localStorage.setItem('cookieConsent', 'accepted');
   hideCookieConsent();
 });
 
 document.getElementById('rejectCookies').addEventListener('click', () => {
-  localStorage.setItem('cookieConcent', 'rejected');
-  hideCookieConcent();
+  localStorage.setItem('cookieConsent', 'rejected');
+  hideCookieConsent();
 });
 
-//Função para ocultar a janela
+// Função para ocultar a janela
 function hideCookieConsent() {
   const cookieConsent = document.getElementById('cookieConsent');
   cookieConsent.classList.add('hidden');
