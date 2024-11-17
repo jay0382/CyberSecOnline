@@ -165,3 +165,45 @@ function hideCookieConsent() {
   const cookieConsent = document.getElementById('cookieConsent');
   cookieConsent.classList.add('hidden');
 }
+
+// Abrir o modal de Definições de Cookies
+function openCookieSettingsModal() {
+  const modal = document.getElementById('cookieSettingsModal');
+  modal.style.display = 'block';
+}
+
+// Fechar o modal de Definições de Cookies
+function closeCookieSettingsModal() {
+  const modal = document.getElementById('cookieSettingsModal');
+  modal.style.display = 'none';
+}
+
+// Salvar configurações de cookies
+function saveCookieSettings() {
+  const preferenceCookies = document.getElementById('preferenceCookies').checked;
+  const statisticsCookies = document.getElementById('statisticsCookies').checked;
+  const marketingCookies = document.getElementById('marketingCookies').checked;
+
+  // Salvar configurações no localStorage
+  const cookieSettings = {
+    preference: preferenceCookies,
+    statistics: statisticsCookies,
+    marketing: marketingCookies,
+  };
+
+  localStorage.setItem('cookieSettings', JSON.stringify(cookieSettings));
+
+  alert('Suas preferências de cookies foram salvas!');
+  closeCookieSettingsModal();
+}
+
+// Verificar configurações de cookies ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+  const savedSettings = JSON.parse(localStorage.getItem('cookieSettings'));
+  if (savedSettings) {
+    document.getElementById('preferenceCookies').checked = savedSettings.preference;
+    document.getElementById('statisticsCookies').checked = savedSettings.statistics;
+    document.getElementById('marketingCookies').checked = savedSettings.marketing;
+  }
+});
+
