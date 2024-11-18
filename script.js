@@ -1,3 +1,7 @@
+function closeDevelopmentBanner() {
+    document.getElementById('developmentBanner').style.display = 'none';
+}
+
 // Função para alternar o menu
 function toggleMenu() {
     const menu = document.getElementById("menu");
