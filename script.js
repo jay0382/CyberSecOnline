@@ -207,3 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Ajustar posição caso a janela de definições de cookies seja aberta
+function adjustCookiePosition() {
+  const cookieConsent = document.getElementById('cookieConsent');
+  cookieConsent.style.bottom = '100px'; // Altere para a altura adequada
+}
+
+document.getElementById('openCookieSettings').addEventListener('click', () => {
+  adjustCookiePosition();
+});
