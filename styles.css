@@ -45,6 +45,24 @@ main {
     flex: 1;
 }
 
+/* Logo animada */
+.logo-animada {
+    width: 80px; /* Ajuste o tamanho da logo */
+    height: auto;
+    margin-right: 10px; /* Espaço entre a logo e o título */
+    animation: girar 3s linear infinite; /* Logo girando continuamente */
+}
+
+/* Animação de rotação */
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Header */
 .header {
     display: flex;
@@ -56,6 +74,7 @@ main {
     position: relative;
 }
 
+/* Estilo do título dentro do header */
 .site-title {
     text-align: center;
     margin: 0 auto;
@@ -65,7 +84,6 @@ main {
     padding: 20px 0;
 }
 
-/* Estilo do <h1> do título do site (dentro do header) */
 .site-title h1 {
     font-size: 3em;
     color: #333;
