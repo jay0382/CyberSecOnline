@@ -47,10 +47,11 @@ main {
 
 /* Logo animada */
 .logo-animada {
-    width: 80px; /* Ajuste o tamanho da logo */
+    width: 70px; /* Ajuste o tamanho da logo */
     height: auto;
     margin-right: 10px; /* Espaço entre a logo e o título */
     animation: girar 3s linear infinite; /* Logo girando continuamente */
+    border-radius: 50%;
 }
 
 /* Animação de rotação */
@@ -90,7 +91,7 @@ main {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     text-align: center;
-    margin: 0;
+    margin: 0
 }
 
 /* Container para os botões "Entrar" e "Criar Conta" */
@@ -261,7 +262,7 @@ main {
 .menu {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 10px;
     background-color: #ffffff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
