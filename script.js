@@ -143,6 +143,14 @@ window.onclick = function(event) {
     if (event.target === termsModal) closeTermsModal();
 };
 
+const menuLinks = document.querySelectorAll(".menu a");
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        menu.classList.remove("active");
+    });
+});
+
 // Exibir janela de cookies após 5 segundos
 setTimeout(() => {
   const cookieConsent = document.getElementById('cookieConsent');
@@ -214,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Ajustar posição caso a janela de definições de cookies seja aberta
 function adjustCookiePosition() {
   const cookieConsent = document.getElementById('cookieConsent');
-  cookieConsent.style.bottom = '100px'; // Altere para a altura adequada
+  cookieConsent.style.bottom = '200px'; // Altere para a altura adequada
 }
 
 document.getElementById('openCookieSettings').addEventListener('click', () => {

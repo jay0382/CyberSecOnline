@@ -466,16 +466,16 @@ footer p {
   margin: auto; /* Centraliza horizontalmente se necessário */
 }
 
-.cookie-settings {
+.cookies-settings { 
     position: fixed;
-    top: 50%; /* Ajuste conforme necessário */
+    top: 70%; /* Ajuste conforme necessário */
     left: 10%;
     transform: translate(-50%, -50%);
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 8px;
-    z-index: 2000; /* Deve ser maior que o da janela de cookies */
+    z-index: 1000; /* Deve ser maior que o da janela de cookies */
 }
 
 /* Outros estilos permanecem os mesmos */
