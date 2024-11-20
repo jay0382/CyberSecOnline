@@ -6,6 +6,7 @@
     <title>CiberSecOnline</title>
     <meta name="author" content="Jaison Evaristo">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"href="new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Fallback para navegadores modernos que suportam PNG -->
     <link rel="icon" href="images/favicon.jpg" type="image/jpg">
@@ -41,15 +42,7 @@
             <img src="images/Logo.webp" alt="Logo CSO" class="logo-animada">
             <h1>CiberSecOnline</h1> 
         </div>
-
-        <div id="noticias-recentes" class="noticias-carrossel hidden">
-          <button id="fechar-noticias" class="btn-fechar">×</button>
-          <h2>Notícias Recentes</h2>
-          <div class="carrossel">
-            <ul id="lista-noticias"></ul>
-          </div>
-        </div>
-        
+      
         <!-- Container para os botões "Entrar" e "Criar Conta" -->
         <!-- Botão "Entrar" para abrir o modal --> 
         <div class="login-container">
@@ -102,7 +95,8 @@
             </div> 
         </div>
 </header>
-<main>
+<main> 
+
     <!-- Introdução ao site -->
     <section class="topics">
         <div class="introduction-box">
@@ -122,7 +116,31 @@
     </div>
     </section>
 
-    <section class="topics">
+         <!-- Seção de Notícias -->
+        <section id="news-section">
+                  <div class="news-carousel" >
+                           <h2>Notícias Recentes</h2>
+                           <div class="carousel-container">
+                                    <div>
+                                              <h3>Título da Notícia 1</h3>
+                                               <p>Resumo ou descrição da notícia 1.</p>
+                                    </div>
+                                    <div>
+                                              <h3>Título da Notícia 2</h3>
+                                              <p>Resumo ou descrição da notícia 2.</p>
+                                    </div>
+                                    <div>
+                                              <h3>Título da Notícia 3</h3>
+                                             <p>Resumo ou descrição da notícia 3.</p>
+                                    </div>
+                           </div>
+                        <button class="carousel-btn prev"  onclick="prevSlide()">&#10094;</button>
+                       <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+                  </div>
+         </section>
+
+     <!-- Seção de Cards -->
+    <section id="topics-section"  class="topics">
         <!-- Card 1 -->
         <div class="card">
             <img src="images/ciberseguranca.jpg" alt="Imagem Introdução Ciberseguraça">
@@ -321,5 +339,6 @@
         </div>
                    
      <script src="script.js"></script>
+     <script src="fetch-news.js"></script>
 </body>
 </html>

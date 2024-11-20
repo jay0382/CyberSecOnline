@@ -1,6 +1,4 @@
-@media (max-width: 768px) {
-    /* Ajustes para telas menores */
-    .header {
+@media (max-width: 768px) { /* Ajustes para telas menores */ .header {
         flex-direction: column;
         padding: 10px;
     }
@@ -92,63 +90,6 @@ main {
     font-weight: bold;
     text-align: center;
     margin: 0
-}
-
-/* Carrossel de notícias */
-.noticias-carrossel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #0b1123;
-  color: #fff;
-  padding: 15px;
-  z-index: 1000;
-  border-bottom: 2px solid #00c853;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.noticias-carrossel.hidden {
-  display: none;
-}
-
-.noticias-carrossel h2 {
-  font-size: 18px;
-  margin: 0 0 10px;
-}
-
-.noticias-carrossel .carrossel {
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.noticias-carrossel .carrossel ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.noticias-carrossel .carrossel li {
-  margin-right: 20px;
-  flex: 0 0 auto;
-}
-
-.noticias-carrossel .carrossel a {
-  color: #00c853;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.noticias-carrossel .btn-fechar {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 /* Container para os botões "Entrar" e "Criar Conta" */
@@ -347,7 +288,6 @@ main {
     color: #007BFF;
 }
 
-
 /* Estilo do box da introdução */
 .introduction-box {
     background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
@@ -360,13 +300,103 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
 }
 
+/* Estilo geral da seção de notícias */
+#news-section {
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    border-radius: 8px;
+    max-width: 1200px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Título da seção */
+#news-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffc107;
+}
+
+/* Container do carrossel */
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo dos slides (notícias) */
+.carousel-container div {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do título de cada notícia */
+.carousel-container div h3 {
+    font-size: 1.5rem;
+    color: #00b894;
+    margin-bottom: 10px;
+}
+
+/* Estilo do texto de cada notícia */
+.carousel-container div p {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/* Estilo dos botões do carrossel */
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* Botão anterior (esquerda) */
+.carousel-btn.prev {
+    left: 10px;
+}
+
+/* Botão próximo (direita) */
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Efeito hover nos botões */
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Ajuste para esconder conteúdo que está fora da área visível */
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Esconde as barras de rolagem */
+}
+
 /* Estilo para o container de tópicos */
 .topics {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    justify-content: center;
+    justify-content: : center;
 }
 
 /* Estilo para os cards */
@@ -397,14 +427,14 @@ main {
     margin: 15px 0;
     color: #333;
 }
-
+ 
 /* Descrição do card */
 .card p {
     font-size: 0.9em;
     padding: 0 15px 15px;
     color: #666;
 }
-
+  
 /* Footer fixado na parte inferior */
 footer {
     background-color: #333;
