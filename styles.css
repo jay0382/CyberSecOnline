@@ -444,13 +444,14 @@ footer p {
     text-decoration: none;
     cursor: pointer;
 }
-
+  
 /* Estilo atualizado para a janela de cookies */
 .cookie-consent {
+  top: 5%;
   position: fixed;
-  bottom: 20px; /* Mantém a janela fixa no canto inferior */
-  left: 20px;
-  right: 20px;
+  bottom: 0px:    
+  left: 10px;
+  right: 10px;
   background-color: #ffffff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -463,6 +464,18 @@ footer p {
   align-items: flex-start;
   max-width: 400px; /* Define um tamanho máximo para a janela */
   margin: auto; /* Centraliza horizontalmente se necessário */
+}
+
+.cookie-settings {
+    position: fixed;
+    top: 50%; /* Ajuste conforme necessário */
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2000; /* Deve ser maior que o da janela de cookies */
 }
 
 /* Outros estilos permanecem os mesmos */
