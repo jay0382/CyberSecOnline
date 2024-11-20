@@ -228,3 +228,38 @@ function adjustCookiePosition() {
 document.getElementById('openCookieSettings').addEventListener('click', () => {
   adjustCookiePosition();
 });
+
+// NewAPI
+document.addEventListener('DOMContentLoaded', () => {
+  const apiKey = '6715350b1f6d4a19b1fe2549acb6bf61'; // Substitua pela sua chave da News API
+  const url = `https://newsapi.org/v2/everything?q=cybersecurity&language=pt&sortBy=publishedAt&apiKey=${apiKey}`;
+  const listaNoticias = document.getElementById('lista-noticias');
+  const noticiasCarrossel = document.getElementById('noticias-recentes');
+  const btnFechar = document.getElementById('fechar-noticias');
+
+  // Buscar notícias da API
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.articles && data.articles.length > 0) {
+        const articles = data.articles.slice(0, 10); // Limitar a 10 notícias
+        articles.forEach((article) => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${article.url}" target="_blank">${article.title}</a>
+          `;
+          listaNoticias.appendChild(li);
+        });
+
+        // Exibir o carrossel de notícias
+        noticiasCarrossel.classList.remove('hidden');
+      }
+    })
+    .catch((error) => console.error('Erro ao buscar notícias:', error));
+
+  // Fechar o carrossel
+  btnFechar.addEventListener('click', () => {
+    noticiasCarrossel.classList.add('hidden');
+  });
+});
+

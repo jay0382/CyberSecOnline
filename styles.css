@@ -94,6 +94,63 @@ main {
     margin: 0
 }
 
+/* Carrossel de notícias */
+.noticias-carrossel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0b1123;
+  color: #fff;
+  padding: 15px;
+  z-index: 1000;
+  border-bottom: 2px solid #00c853;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.noticias-carrossel.hidden {
+  display: none;
+}
+
+.noticias-carrossel h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.noticias-carrossel .carrossel {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.noticias-carrossel .carrossel ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.noticias-carrossel .carrossel li {
+  margin-right: 20px;
+  flex: 0 0 auto;
+}
+
+.noticias-carrossel .carrossel a {
+  color: #00c853;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.noticias-carrossel .btn-fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 /* Container para os botões "Entrar" e "Criar Conta" */
 .login-container {
     display: flex;
