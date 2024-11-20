@@ -218,44 +218,38 @@
                 <i class="fab fa-youtube"></i>
             </a>
         </div>
-    </section> 
+    </section>
 
-   <!-- Links Úteis -->
-<section class="useful-links">
-    <h2>Links Úteis</h2>
-    <div class="columns-container">
-        <div class="column">
-            <h3>Notícias de Tecnologia</h3>
-            <ul>
-                <li><a href="https://tecnoblog.net" target="_blank">Tecnoblog</a></li>
-                <li><a href="https://www.theverge.com/tech" target="_blank">The Verge</a></li>
-                <li><a href="https://canaltech.com.br" target="_blank">Canaltech</a></li>
-                <li><a href="https://www.olhardigital.com.br" target="_blank">Olhar Digital</a></li>
-                <li><a href="https://techcrunch.com" target="_blank">TechCrunch</a></li>
-            </ul>
+<!-- Nova seção: Links úteis -->
+    <section class="useful-links">
+        <h2>Links Úteis</h2>
+        <div class="links-container">
+            <div class="link-column">
+                <h3>Notícias de Tecnologia</h3>
+                <ul>
+                    <li><a href="https://tecnoblog.net" target="_blank">Tecnoblog</a></li>
+                    <li><a href="https://www.theverge.com/tech" target="_blank">The Verge</a></li>
+                    <li><a href="https://canaltech.com.br" target="_blank">Canaltech</a></li>
+                </ul>
+            </div>
+            <div class="link-column">
+                <h3>Notícias de Cibersegurança</h3>
+                <ul>
+                    <li><a href="https://www.securityweek.com" target="_blank">Security Week</a></li>
+                    <li><a href="https://www.darkreading.com" target="_blank">Dark Reading</a></li>
+                    <li><a href="https://threatpost.com" target="_blank">Threat Post</a></li>
+                </ul>
+            </div>
+            <div class="link-column">
+                <h3>Ataques em Tempo Real</h3>
+                <ul>
+                    <li><a href="https://cybermap.kaspersky.com" target="_blank">Kaspersky Cybermap</a></li>
+                    <li><a href="https://threatmap.fortiguard.com" target="_blank">Fortiguard Threat Map</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="column">
-            <h3>Notícias de Cibersegurança</h3>
-            <ul>
-                <li><a href="https://www.securityweek.com" target="_blank">Security Week</a></li>
-                <li><a href="https://www.darkreading.com" target="_blank">Dark Reading</a></li>
-                <li><a href="https://threatpost.com" target="_blank">Threat Post</a></li>
-                <li><a href="https://www.krebsonsecurity.com" target="_blank">Krebs on Security</a></li>
-                <li><a href="https://www.thehackernews.com" target="_blank">The Hacker News</a></li>
-            </ul>
-        </div>
-        <div class="column">
-            <h3>Ataques em Tempo Real</h3>
-            <ul>
-                <li><a href="https://cybermap.kaspersky.com" target="_blank">Kaspersky Cybermap</a></li>
-                <li><a href="https://threatmap.fortiguard.com" target="_blank">Fortiguard Threat Map</a></li>
-                <li><a href="https://threatmap.checkpoint.com" target="_blank">Checkpoint Threat Map</a></li>
-                <li><a href="https://cyberthreat.realmap" target="_blank">Cyber Threat Map</a></li>
-            </ul>
-        </div>
-    </div>
-</section>  
-  
+    </section>    
+
     <p>&copy; 2024 CiberSecOnline. Todos os direitos reservados.</p>
 </footer>
 

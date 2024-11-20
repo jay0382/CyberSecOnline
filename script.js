@@ -230,4 +230,3 @@ document.getElementById('openCookieSettings').addEventListener('click', () => {
 });
 
 
-

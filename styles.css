@@ -306,7 +306,7 @@ main {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    justify-content: : center;
+    justify-content: center;
 }
 
 /* Estilo para os cards */
@@ -337,14 +337,14 @@ main {
     margin: 15px 0;
     color: #333;
 }
- 
+
 /* Descrição do card */
 .card p {
     font-size: 0.9em;
     padding: 0 15px 15px;
     color: #666;
 }
-  
+
 /* Footer fixado na parte inferior */
 footer {
     background-color: #333;
@@ -375,6 +375,65 @@ footer ul li a:hover {
 footer p {
     margin-top: 10px;
     font-size: 0.9em;
+}
+
+
+/* Estilo ajustado para a seção de links úteis */
+.useful-links {
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 8px;
+    max-width: 1200px;
+}
+
+.useful-links h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.useful-links .links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Ajuste para espaçamento uniforme */
+    gap: 20px;
+}
+
+.useful-links .link-column {
+    flex: 1 1 30%; /* Configuração mais consistente para 3 colunas */
+    min-width: 250px; /* Largura mínima para colunas pequenas */
+    max-width: 300px; /* Limite máximo para manter a proporção */
+    text-align: left;
+}
+
+.useful-links .link-column h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.useful-links .link-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.useful-links .link-column ul li {
+    margin: 5px 0;
+}
+
+.useful-links .link-column ul li a {
+    color: #ffa500; /* Destaque para os links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.useful-links .link-column ul li a:hover {
+    color: #fff; /* Muda para branco ao passar o mouse */
 }
 
 /* Estilo da seção de redes sociais */
@@ -508,3 +567,4 @@ footer p {
 .hidden {
   display: none;
 }
+
