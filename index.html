@@ -45,56 +45,68 @@
       
         <!-- Container para os botões "Entrar" e "Criar Conta" -->
         <!-- Botão "Entrar" para abrir o modal --> 
-        <div class="login-container">
-            <a href="#" class="login-link" onclick="openLoginModal()">Entrar</a> 
+        <div class="button-container">
+            <button id="login-button" class="btn btn-primary" onclick="openLoginModal()">Entrar</button> 
            
             <!-- Botão "Criar Conta" para abrir o modal -->
-            <a href="#" class="register-link" onclick="openRegisterModal()">Criar Conta</a>   
+            <button id="register-button" class="btn btn-success" onclick="openRegisterModal()">Criar Conta</button>   
         </div> 
 
-        <!-- Modal de Login -->
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeLoginModal()">&times;</span>
-                <h2>Login</h2>
-                <form id="loginForm">
-                    <label for="username">Usuário ou Email:</label>
-                    <input type="text" id="username" name="username" required>
-             
-                    <label for="password">Senha:</label>
-                    <input type="password" id="password" name="password" required>
+         <!-- Modal Login -->
+         <div class="modal" id="login-modal">
+                  <div class="modal-content">
+                           <span class="close" onclick="closeLoginModal()">&times;</span>
+                          <h2>Login</h2>
+                          <form id="login-form">
+                                     <label for="login-email">Usuário ou Email:</label>
+                                     <input type="email" id="login-email" placeholder="Digite seu e-mail" required>
+                                     <span class="error" id="login-email-error"></span>
 
-                    <button type="submit">Entrar</button>
-                </form>
-            </div>
-        </div>
+                                    <label for="login-password">Senha:</label>
+                                    <div class="password-container">
+                                             <input type="password" id="login-password" placeholder="Digite sua senha" required>
+                                            <button type="button" class="toggle-password" onclick="togglePassword('login-password')">👁️</button>
+                                    </div>
+                                    <span class="error" id="login-password-error"></span>
 
-        <!-- Modal de Criação de Conta -->
-        <div id="registerModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeRegisterModal()">&times;</span>
-                <h2>Criar Conta</h2>
-                <form id="registerForm">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                                    <button type="submit" class="submit-btn">Entrar</button>
+                           </form>  
+                  </div>
+         </div>
 
-                    <label for="newUsername">Nome de Usuário:</label>
-                    <input type="text" id="newUsername" name="newUsername" required>
+          <!-- Modal Criação de Conta -->
+         <div class="modal" id="register-modal">
+                  <div class="modal-content">
+                          <span class="close" onclick="closeRegisterModal()">&times;</span>
+                          <h2>Criar Conta</h2>
+                          <form id="register-form">
+                                     <label for="register-email">Email:</label>
+                                     <input type="email" id="register-email" placeholder="Digite seu e-mail" required>
+                                     <span class="error" id="register-email-error"></span>
 
-                    <label for="newPassword">Senha:</label>
-                    <input type="password" id="newPassword" name="newPassword" required
-                           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}"
-                           title="A senha deve conter pelo menos 6 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.">  
+                                     <label for="register-username">Nome de Usuário:</label>
+                                     <input type="text" id="register-username" placeholder="Digite seu nome de usuário" required>
+                                     <span class="error" id="register-username-error"></span>
 
-                    <label for="confirmPassword">Confirmar Senha:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required
-                           title="Por favor, insira a mesma senha digitada acima">
+                                     <label for="register-password">Senha:</label>
+                                     <div class="password-container">
+                                              <input type="password" id="register-password" placeholder="Digite sua senha" required>
+                                              <button type="button" class="toggle-password" onclick="togglePassword('register-password')">👁️</button>
+                                     </div>
+                                     <span class="error" id="register-password-error"></span>
 
-                    <button type="submit">Criar Conta</button>
-                </form>
-            </div> 
-        </div>
-</header>
+                                     <label for="confirm-password">Confirmar Senha:</label>
+                                     <div class="password-container">
+                                              <input type="password" id="confirm-password" placeholder="Confirme sua senha" required>
+                                              <button type="button" class="toggle-password" onclick="togglePassword('confirm-password')">👁️</button>
+                                     </div>
+                                     <span class="error" id="confirm-password-error"></span>
+
+                                     <button type="submit" class="submit-btn">Criar Conta</button>
+                            </form>
+                   </div>
+           </div>
+  </header>
 <main> 
 
     <!-- Introdução ao site -->

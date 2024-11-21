@@ -8,27 +8,105 @@ function toggleMenu() {
     menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "block" : "none";
 }
 
-// Função para abrir e fechar modais de login
+// Função para abrir o modal de login
 function openLoginModal() {
-    document.getElementById("loginModal").style.display = "block";
-    document.querySelector(".login-container").style.display = "none"; // Esconde o botão "Entrar"
+    document.getElementById("login-modal").classList.add("visible");
 }
 
+// Função para fechar o modal de login
 function closeLoginModal() {
-    document.getElementById("loginModal").style.display = "none";
-    document.querySelector(".login-container").style.display = "flex"; // Mostra o botão "Entrar" novamente
+    document.getElementById("login-modal").classList.remove("visible");
 }
 
-// Função para abrir e fechar modais de criação de conta
+// Função para abrir o modal de criação de conta
 function openRegisterModal() {
-    document.getElementById("registerModal").style.display = "block";
-    document.querySelector(".login-container").style.display = "none";
+    document.getElementById("register-modal").classList.add("visible");
 }
 
+// Função para fechar o modal de criação de conta
 function closeRegisterModal() {
-    document.getElementById("registerModal").style.display = "none";
-    document.querySelector(".login-container").style.display = "flex";
+    document.getElementById("register-modal").classList.remove("visible");
 }
+
+// Função para alternar a visualização de senha
+function togglePassword(fieldId) {
+    const field = document.getElementById(fieldId);
+    field.type = field.type === "password" ? "text" : "password";
+}
+
+// Validação de e-mail
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Validação de senha
+function validatePassword(password) {
+    const passwordRegex = /^(?=.[!@#$%^&])(?=.{6,})/;
+    return passwordRegex.test(password);
+}
+
+// Validação do formulário de login
+document.getElementById("login-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    if (!validateEmail(email)) {
+        document.getElementById("login-email-error").innerText = "Por favor, insira um e-mail válido.";
+    } else {
+        document.getElementById("login-email-error").innerText = "";
+    }
+
+    if (!validatePassword(password)) {
+        document.getElementById("login-password-error").innerText = "A senha deve ter pelo menos 6 caracteres e incluir caracteres especiais.";
+    } else {
+        document.getElementById("login-password-error").innerText = "";
+    }
+
+    if (validateEmail(email) && validatePassword(password)) {
+        alert("Login bem-sucedido!");
+        closeLoginModal();
+    }
+});
+
+// Validação do formulário de criação de conta
+document.getElementById("register-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.getElementById("register-email").value;
+    const username = document.getElementById("register-username").value;
+    const password = document.getElementById("register-password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+
+    if (!validateEmail(email)) {
+        document.getElementById("register-email-error").innerText = "Por favor, insira um e-mail válido.";
+    } else {
+        document.getElementById("register-email-error").innerText = "";
+    }
+
+    if (!username) {
+        document.getElementById("register-username-error").innerText = "Por favor, insira um nome de usuário.";
+    } else {
+        document.getElementById("register-username-error").innerText = "";
+    }
+
+    if (!validatePassword(password)) {
+        document.getElementById("register-password-error").innerText = "A senha deve ter pelo menos 6 caracteres e incluir caracteres especiais.";
+    } else {
+        document.getElementById("register-password-error").innerText = "";
+    }
+
+    if (password !== confirmPassword) {
+        document.getElementById("confirm-password-error").innerText = "As senhas não coincidem.";
+    } else {
+        document.getElementById("confirm-password-error").innerText = "";
+    }
+
+    if (validateEmail(email) && username && validatePassword(password) && password === confirmPassword) {
+        alert("Conta criada com sucesso!");
+        closeRegisterModal();
+    }
+});
 
 // Funções para abrir e fechar Política de Privacidade
 function openPrivacyModal() {
@@ -48,107 +126,82 @@ function closeTermsModal() {
     document.getElementById("termsModal").style.display = "none";
 }
 
+// Função para alternar visualização de senha
+function togglePassword(fieldId) {
+    const field = document.getElementById(fieldId);
+    field.type = field.type === "password" ? "text" : "password";
+}
 
-// Função para validar senha
+// Validação de e-mail
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Validação de senha
 function validatePassword(password) {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[+=/_<>!@#$])[A-Za-z\d+=/_<>!@#$]{5,}$/;
-    return regex.test(password);
+    const passwordRegex = /^(?=.*[!@#$%^&*])(?=.{6,})/;
+    return passwordRegex.test(password);
 }
 
-// Função para tratar o envio do formulário de login
-function handleLoginSubmit(event) {
+// Validação do formulário de login
+document.getElementById("login-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const emailOrUsername = document.getElementById('login-email-username').value;
-    const password = document.getElementById('login-password').value;
-    const loginError = document.getElementById('login-error');
-
-    // Simulação de verificação de usuários registrados
-    const registeredUsers = [
-        { email: 'usuario1@gmail.com', username: 'usuario1', password: 'Senha@123' },
-        { email: 'usuario2@yahoo.com', username: 'usuario2', password: 'Senha@456' }
-    ];
-
-    const user = registeredUsers.find(
-        user => (user.email === emailOrUsername || user.username === emailOrUsername) && user.password === password
-    );
-
-    if (!user) {
-        loginError.textContent = 'Credenciais inválidas. Verifique o email, usuário ou senha.';
-        return;
-    }
-
-    loginError.textContent = '';
-    alert('Login bem-sucedido!');
-
-    // Redirecionar para a página principal
-window.location.href = '/pagina-principal/index.html';
-
-    // Limpar os campos após login bem-sucedido
-    document.getElementById('login-email-username').value = '';
-    document.getElementById('login-password').value = '';
-}
-
-// Função para tratar o envio do formulário de registro
-function handleSignupSubmit(event) {
-    event.preventDefault();
-    const email = document.getElementById('signup-email').value;
-    const username = document.getElementById('signup-username').value;
-    const password = document.getElementById('signup-password').value;
-    const confirmPassword = document.getElementById('signup-confirm-password').value;
-    const signupError = document.getElementById('signup-error');
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
 
     if (!validateEmail(email)) {
-        signupError.textContent = 'Por favor, insira um email válido.';
-        return;
+        document.getElementById("login-email-error").innerText = "Por favor, insira um e-mail válido.";
+    } else {
+        document.getElementById("login-email-error").innerText = "";
     }
 
     if (!validatePassword(password)) {
-        signupError.textContent =
-            'A senha deve ter pelo menos 6 caracteres e incluir números, letras maiúsculas, letras minúsculas e caracteres especiais: +, =, /, _, <, >, !, @, #, $.';
-        return;
+        document.getElementById("login-password-error").innerText = "A senha deve ter pelo menos 6 caracteres e incluir caracteres especiais.";
+    } else {
+        document.getElementById("login-password-error").innerText = "";
+    }
+
+    if (validateEmail(email) && validatePassword(password)) {
+        alert("Login bem-sucedido!");
+    }
+});
+
+// Validação do formulário de criação de conta
+document.getElementById("register-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.getElementById("register-email").value;
+    const username = document.getElementById("register-username").value;
+    const password = document.getElementById("register-password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+
+    if (!validateEmail(email)) {
+        document.getElementById("register-email-error").innerText = "Por favor, insira um e-mail válido.";
+    } else {
+        document.getElementById("register-email-error").innerText = "";
+    }
+
+    if (!username) {
+        document.getElementById("register-username-error").innerText = "Por favor, insira um nome de usuário.";
+    } else {
+        document.getElementById("register-username-error").innerText = "";
+    }
+
+    if (!validatePassword(password)) {
+        document.getElementById("register-password-error").innerText = "A senha deve ter pelo menos 6 caracteres e incluir caracteres especiais.";
+    } else {
+        document.getElementById("register-password-error").innerText = "";
     }
 
     if (password !== confirmPassword) {
-        signupError.textContent = 'As senhas não coincidem.';
-        return;
+        document.getElementById("confirm-password-error").innerText = "As senhas não coincidem.";
+    } else {
+        document.getElementById("confirm-password-error").innerText = "";
     }
 
-    // Simulação de Criação de Conta
-    const registeredUsers = ['usuario1@gmail.com', 'usuario2@yahoo.com'];
-    if (registeredUsers.includes(email)) {
-        signupError.textContent = 'Usuário já cadastrado.';
-        return;
+    if (validateEmail(email) && username && validatePassword(password) && password === confirmPassword) {
+        alert("Conta criada com sucesso!");
     }
-
-    signupError.textContent = '';
-    alert('Conta criada com sucesso!');
-
-    // Limpar campos após criação de conta
-    document.getElementById('signup-email').value = '';
-    document.getElementById('signup-username').value = '';
-    document.getElementById('signup-password').value = '';
-    document.getElementById('signup-confirm-password').value = '';
-}
-
-// Fechar qualquer modal ao clicar fora dele
-window.onclick = function(event) {
-    const loginModal = document.getElementById("loginModal");
-    const registerModal = document.getElementById("registerModal");
-    const privacyModal = document.getElementById("privacyModal");
-    const termsModal = document.getElementById("termsModal");
-
-    if (event.target === loginModal) closeLoginModal();
-    if (event.target === registerModal) closeRegisterModal();
-    if (event.target === privacyModal) closePrivacyModal();
-    if (event.target === termsModal) closeTermsModal();
-};
-
-const menuLinks = document.querySelectorAll(".menu a");
-menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        menu.classList.remove("active");
-    });
 });
 
 // Exibir janela de cookies após 5 segundos

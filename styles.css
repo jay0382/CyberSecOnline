@@ -93,7 +93,7 @@ main {
 }
 
 /* Container para os botões "Entrar" e "Criar Conta" */
-.login-container {
+.button-container {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -102,7 +102,7 @@ main {
 }
 
 /* Estilo do botão "Entrar" */
-.login-link {
+#login-button {
     display: inline-block;
     padding: 10px 20px;
     color: #ffffff;
@@ -111,30 +111,34 @@ main {
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.login-link:hover {
+#login-button:hover {
     background-color: #0056b3; /* Cor ao passar o mouse */
 }
 
 /* Estilo do botão "Criar Conta" */
-.register-link {
+#register-button {
     display: inline-block;
-    padding: 8px 18px; /* Um pouco menor que o "Entrar" */
+    padding: 10px 20px;
     color: #ffffff;
     background-color: #28a745;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.register-link:hover {
+#register-button:hover {
     background-color: #218838; /* Cor ao passar o mouse */
 }
 
 /* Botão de login mais robusto */
-.login-link {
+.login-button {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -148,7 +152,7 @@ main {
     border: none;
 }
 
-.login-link:hover {
+.login-button :hover {
     background-color: #0056b3;
 }
 
@@ -214,6 +218,7 @@ main {
 
 /* Campos de entrada do formulário */
 .modal-content input[type="text"],
+.modal-content input[type="email"],
 .modal-content input[type="password"] {
     padding: 8px;
     margin-top: 5px;
@@ -222,7 +227,7 @@ main {
 }
 
 /* Botão de envio do formulário */
-.modal-content button {
+.modal-content .submit-btn {
     margin-top: 15px;
     padding: 10px;
     background-color: #007BFF;
@@ -233,7 +238,26 @@ main {
     font-weight: bold;
 }
 
-.modal-content button:hover {
+.modal-content .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botão de alternar visualização de senha */
+.toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
+
+.modal-content .submit-btn  : hover { 
     background-color: #0056b3;
 }
 
