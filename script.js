@@ -163,4 +163,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Função para abrir os modais Política de Privacidade e Termos de Serviço
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "block"; // Exibe o modal apenas ao clicar no link
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none"; // Oculta o modal ao clicar no botão fechar
+    }
+}
+
+
 
