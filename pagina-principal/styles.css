@@ -1,0 +1,126 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f9; /* Fundo claro */
+  color: #333; /* Texto escuro */
+}
+
+header {
+  background: #1a73e8; /* Cor principal do cabeçalho */
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+}
+
+.dashboard h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a73e8;
+}
+
+.dashboard p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo do cartão */
+.topic-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topic-card h3 {
+  margin: 0.5rem 0;
+  color: #1a73e8;
+}
+
+.topic-card p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.topic-card button {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.topic-card button:hover {
+  background: #1558b3;
+}
+
+/* Cartão bloqueado */
+.topic-card.locked {
+  opacity: 0.6;
+  pointer-events: none; /* Desativa cliques */
+  position: relative;
+}
+
+/* Estilo do cadeado */
+.lock-overlay {
+  position: absolute;
+  top: 10px; /* Ajuste para posicionar acima do conteúdo */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem; /* Tamanho do ícone */
+  color: #ff0000; /* Cor do cadeado */
+  z-index: 2; /* Garante que apareça acima do conteúdo */
+}
+
+.topic-card.locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
