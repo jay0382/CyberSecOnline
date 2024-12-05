@@ -3,12 +3,6 @@ function closeDevelopmentBanner() {
     document.getElementById('developmentBanner').style.display = 'none';
 }
 
-// * Menu *
-function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "block" : "none";
-}
-
 // * Modais de Login e Criação de Conta *
 function openLoginModal() {
     document.getElementById("login-modal").classList.add("visible");
