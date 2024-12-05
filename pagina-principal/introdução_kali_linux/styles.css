@@ -1,0 +1,81 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #003366, #005f5f, #007b33);
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #002244;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+main {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 20px;
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+section p {
+  margin-bottom: 10px;
+}
+
+.image-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image-container img {
+  max-width: 50%;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #004d33;
+  color: #fff;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #00cc99;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.video-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 720px;
+  height: 400px;
+  border: none;
+}
